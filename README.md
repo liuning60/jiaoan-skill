@@ -12,7 +12,26 @@
 - **懒人审核** —— 回复单个数字即可（1 继续 / 0 生成全部 / 2 图片 / 3 案例 / 4 内容 / 5·6·7 组合 / 9 全部重做）
 - **整本先预研** —— 生成前检索人才培养方案，出约 500 字教学目标与内容框架，经你核实后再生成
 
-## 安装（豆包 / Claude Code / Cursor 等支持 Agent Skills 的环境）
+## 配图引擎 v1.4（2026-10 升级）
+
+解决"AI 生成图难看""选了网图优先还是 95% 生成图"两个实测痛点：
+
+- **网图优先真正生效** —— 从案例提取可搜实体（作品名/品牌名/软件界面/原型），中英双语各搜一轮，`≥640px` 过滤；只有确认"该类型本无网图"（流程/原理/结构等抽象示意）才转 AI 生成
+- **反 AI 味清单** —— 禁紫蓝渐变、玻璃拟态卡片、无意义装饰、假图表堆砌；不堆"8K 超写实"等质量词
+- **质感纪律（吸收 cinema-dna 方法论）** —— 生图禁用词全禁（rich detail / epic / CGI render / game cinematic 等）、信息密度克制（每图 1 主线索 + ≤1 次线索）、一套图一个质感基座、受控不完美
+- **写实图分工** —— 案例作品→网图优先；实物/场景→AI 写实（详细摄影语言：镜头/光照来源/材质/动作）；人物氛围→少量点缀
+- **prompt 自查 7 项** —— 内容正确 / 文字风险 / AI 味扫描 / 负面词 / 类型匹配 / 硬约束 / 存档就绪，任何一项不过不许发图
+- **prompt 随图存档** —— 每张生成图配套详细 prompt 一并保存（`lesson{N}-prompts.md`），可追溯、可复用、可重刷
+- **界面图全类型默认 B** —— 桌面软件（含理工科专业软件 CAD/MATLAB 等）/ 手机 App / 网页全覆盖，默认"截图占位"由老师补真图（专业软件界面 AI 生成必乱码）
+- **执行通道永远免费、视觉不强制统一** —— 不引入任何付费生图 API；内容/知识类型优先级高于视觉统一
+
+## 安装
+
+### 方式一：虾评平台（试用版免费一键安装）
+
+在虾评技能市场搜索「教案生成器」（或访问 https://xiaping.coze.com/skill/3b262f38-d510-4d93-87b6-f1565d599ab7 ），或在 Agent 对话中直接说"装教案生成器技能"。
+
+### 方式二：GitHub（豆包 / Claude Code / Cursor 等支持 Agent Skills 的环境）
 
 ```bash
 npx skills add https://github.com/liuning60/jiaoan-skill -skill lesson-plan-generator
@@ -40,12 +59,13 @@ jiaoan-skill/
 └── lesson-plan-generator/        ← 技能本体（中文版）
     ├── SKILL.md
     └── references/
-        ├── case-engine.md         案例六要素与检索策略
-        ├── image-engine.md        配图下限、水印、网图取舍、体积控制
+        ├── ai-image-engine.md      配图增强：网图强化、反 AI 味与质感纪律、prompt 自查 7 项与随图存档（v1.4）
+        ├── case-engine.md          案例六要素与检索策略
+        ├── image-engine.md         配图下限、水印、网图取舍、体积控制
         ├── interaction-protocol.md 数字审核协议
-        ├── lesson-structures.md   大学/中学结构、时间安排、排版规范
-        ├── template-and-update.md 套模板、老教案更新、踩坑解法
-        └── lessons-learned.md     实测踩坑与验收清单
+        ├── lesson-structures.md    大学/中学结构、时间安排、排版规范
+        ├── template-and-update.md  套模板、老教案更新、踩坑解法
+        └── lessons-learned.md      实测踩坑与验收清单
 ```
 
 ## License
