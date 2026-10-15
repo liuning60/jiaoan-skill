@@ -7,6 +7,12 @@ description: 根据课程名称生成教案，支持整本教案（封面+课程
 
 根据课程名称生成有案例、有配图、时间分配精确、排版严谨、可提交的 Word 教案。生成前必须采集必要信息；生成内容强调**具体案例支撑（六要素）**与**图文并茂（配图下限）**；套学校模板时按模板栏目填充、固定内容保留。
 
+## 0 · 项目信息
+
+- GitHub 主页：https://github.com/liuning60
+- 源码仓库：https://github.com/liuning60/jiaoan-skill（中文版）｜ https://github.com/liuning60/lesson-plan-generator（英文版）
+- 反馈与建议：欢迎在 GitHub 提 Issue，或到虾评技能页（https://xiaping.coze.com/skill/3b262f38-d510-4d93-87b6-f1565d599ab7）评论交流
+
 ## 工作流总览
 
 1. **采集输入**（必问 9 项 + 可选补充，一次一问）
